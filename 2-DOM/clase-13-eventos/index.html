@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .menu {
+        background-color: bisque;
+        font-size: 16px;
+      }
+      .main-menu {
+        color: aquamarine;
+        background-color: tomato;
+      }
+      .visible {
+        display: block;
+      }
+      .invisible {
+        display: none;
+      }
+      div {
+        background-color: black;
+      }
+      #pStyle {
+        color: yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="app-tittle">soy el header de esta app</h1>
+      <button type="button" onclick="alert('Bien hecho!')">Click Here!</button>
+      <aside class="menu">
+        <div id="miElemento">
+          <p style="color: aliceblue"><b>Este es un </b> párrafo.</p>
+          <p style="color: aliceblue">Texto oculto.</p>
+          <span style="display: none"> Texto oculto.</span>
+        </div>
+
+        <p>Referencia para parents o childrens</p>
+        <ul id="parent">
+          <li><a href="#">Home</a></li>
+          <li class="menu-items"><a href="#">About Me</a></li>
+          <li class="menu-items"><a href="#">Blogs</a></li>
+          <li class="last-child"><a href="#">Contacts</a></li>
+        </ul>
+        <button id="btn-MF" type="button">Click on me Motha fuckha</button>
+        <p>Referencia para parents o childrens</p>
+      </aside>
+    </header>
+    <main class="main-menu" id="contentArea">
+      <!-- attribute are part o HTML, like id, class, type, value, etc -->
+      <input id="input-id" class="input-class" type="text" value="Nombre" />
+
+      <section>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      </section>
+      <section>
+        <p>
+          Repellendus dicta accusantium dolore unde laudantium soluta magni!
+        </p>
+      </section>
+      <section id="content-area">
+        <p id="pStyle">
+          Minus eaque ducimus libero officiis facere reiciendis praesentium
+          corporis magnam exercitationem!
+        </p>
+      </section>
+      <section><p>Similique, sunt officiis!</p></section>
+    </main>
+    <section id="sectionArea">
+      <button id="btnCrear" type="button">Crear elemento nuevo</button>
+      <ul id="listArea">
+        <li id="items">item 1</li>
+        <li id="items">item 2</li>
+        <li id="items">item 3</li>
+        <li id="items">item 4</li>
+      </ul>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>

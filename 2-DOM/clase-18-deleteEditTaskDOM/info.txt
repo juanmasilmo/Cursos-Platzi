@@ -1,0 +1,35 @@
+const tasks = Array.from(taskList.querySelectorAll("li")).map((li) => li.firstChild.textContent);
+Vamos a desglosarlo paso por paso:
+
+taskList.querySelectorAll("li")
+
+Obtiene todos los elementos <li> dentro de taskList
+Esto devuelve una NodeList (una colección de nodos)
+
+
+Array.from()
+
+Convierte la NodeList en un Array
+Esto es necesario para poder usar el método map
+
+
+.map((li) => li.firstChild.textContent)
+
+Para cada elemento <li> del array:
+
+firstChild obtiene el primer nodo hijo del <li>
+textContent obtiene el texto contenido en ese nodo
+
+
+map crea un nuevo array con los resultados
+
+
+
+Por ejemplo, si tienes este HTML:
+htmlCopy<ul id="taskList">
+  <li>Comprar pan</li>
+  <li>Hacer ejercicio</li>
+  <li>Estudiar JavaScript</li>
+</ul>
+La línea de código convertirá esto en:
+javascriptCopy["Comprar pan", "Hacer ejercicio", "Estudiar JavaScript"]
