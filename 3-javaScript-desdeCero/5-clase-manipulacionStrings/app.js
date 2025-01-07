@@ -1,49 +1,61 @@
-//tipo de dato primitivo string
+//strings pueden ser primitivos u objetos
 
-let nombre = "juanma"
-const apellido = 'gomez'
-const saludo = `hola ${nombre} ${apellido}`
-console.log(saludo)
+//primitivos
+let nombre = 'Juan';
+console.log(nombre);
+console.log(typeof nombre)
 
-//1-concatenacion: opcion +, se puede concatenar con +, pero no es la mejor opcion
-const direccion = "calle falsa 123"
-const ciudad = "Springfield"
-console.log("vivo en " + direccion + " en la ciudad de " + ciudad)
+let name = String("Juan2");// esta forma esta deprecated... Obsoleta, por eso se tacha la variable
+console.log(name);
+console.log(typeof name);
 
-//2-interpolacion o Template Lterals: opcion ``, se puede concatenar con ${}, es la mejor opcion
-console.log(`vivo en ${direccion} en la ciudad de ${ciudad}`)
+// string objetos
 
-//3-concatenacion: join
-const frutas = ["manzana", "pera", "banana"]
-console.log(frutas.join(", "))// aca lo que hace es unir los elementos del array con una coma y un espacio que es lo que esta en la funcion de join
+const stringObjeto = new String('Juan3');
+console.log(typeof stringObjeto);
 
-//4-concatenacion: concat()
-const hobbie1 = "correr"
-const hobbie2 = "nadar"
-const hobbie3 = "leer"
-const hobbies = "mis hobbies son: ".concat(hobbie1, ", ", hobbie2, ", ", hobbie3, ".")// aca lo que hace es unir los elementos con una coma y un espacio que es lo que esta en la funcion de concat
-console.log(hobbies)
+//acceder a caracteres
 
-//CARACTERES DE ESCAPE
-// 1-escape alternativo
+const saludo = 'hola juan. como estas bro?';
+console.log(saludo[0]);// corchetes porque es un array
+console.log(saludo[1]);
 
-const activity = "I'm learning \"JavaScript\""
-console.log(activity)
+console.log(saludo.charAt(0));//parentesis porque es un metodo
+console.log(saludo.charAt(1));
 
-// 2-escape de backslash
-const texto = "hola \"juanma\""
-console.log(texto)
+console.log(saludo.indexOf('juan'));//busca la primera coincidencia
+console.log(saludo.indexOf('j'));//busca la primera coincidencia si no la encuentra devuelve -1
 
-// 2-escape de Template Lterals
-const texto2 = `hola "juanma"`
-console.log(texto2)
+console.log(saludo.indexOf('bro', 10)); //busca la primera coincidencia a partir de la posicion 10
 
-console.log("=======================================")
+console.log(saludo.lastIndexOf('juan'));//busca la ultima coincidencia
 
-//escribir string largos
+console.log(saludo.slice(0, 4));//corta el string desde la posicion 0 hasta la 4
 
-/* Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas perspiciatis hic enim, voluptas quasi autem explicabo, temporibus doloremque ducimus corporis nobis accusantium aut sit, ipsam debitis sunt odio amet consectetur? */
+console.log(saludo.length);//devuelve la longitud del string
 
-const lorem = `Lorem ipsum, dolor sit amet\nconsectetur adipisicing elit. Quas perspiciatis hic\nenim, voluptas quasi autem explicabo, temporibus\ndoloremque ducimus corporis nobis accusantium aut\nsit, ipsam debitis sunt odio amet consectetur?\n
-fin del texto`//\n es un salto de linea
-console.log(lorem)
+console.log(saludo.toLocaleLowerCase());//convierte el string a minusculas
+
+console.log(saludo.toLocaleUpperCase());//convierte el string a mayusculas
+
+console.log(saludo.split(' '));//divide el string en un array
+
+console.log(saludo.substring(0, 4));//corta el string desde la posicion 0 hasta la 4
+
+console.log(saludo.includes('juan'));//devuelve true si encuentra la palabra
+
+console.log(saludo.startsWith('ho'));//devuelve true si el string empieza con la palabra
+
+console.log(saludo.endsWith('bro?'));//devuelve true si el string termina con la palabra
+
+console.log(saludo.replace('juan', 'pedro'));//reemplaza la palabra
+
+console.log(saludo.repeat(3));//repite el string 3 veces
+
+console.log(saludo.trim());//elimina los espacios en blanco al principio y al final del string
+
+console.log(saludo.trimStart());//elimina los espacios en blanco al principio del string
+
+console.log(saludo.trimEnd());//elimina los espacios en blanco al final del string
+
+
