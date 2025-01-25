@@ -1,70 +1,33 @@
-const usersDB = [
-    {
-        user: "juancho",
-        pass: "123",
-    },
-    {
-        user: "lolo",
-        pass: "159",
-    },
-    {
-        user: "pepe",
-        pass: "987",
-    },
-    {
-        user: "fulano",
-        pass: "123",
-    },
-]
+//que son las promesas?
+//una promesa es un objeto que se utiliza para manejar operaciones asíncronas
+//que se pueden completar o fallar
+//tienen 3 estados: pending
+//fulfilled
+//rejected
 
-const usersTimeline = [
-    {
-        username: "juancho",
-        date: "2022-01-01",
-        post: "Aprendiendo javaScript"
-    },
-    {
-        username: "fulano",
-        date: "2022-01-01",
-        post: "Aprendiendo Objetos en Javascript"
-    },
-    {
-        username: "pepe",
-        date: "2022-01-01",
-        post: "Entendiendo javaScript"
-    }
-]
+//manejan 2 callbacks: 
+//resolve
+//reject
+//los callbacks se ejecutan en el estado correspondiente
+//cuando la promesa esta fullfilled y en el callback resolve se ejecuta el then()
+//cuando la promesa esta rejected y en el callback reject se ejecuta el catch()
 
-const user = prompt("Ingresa Usuario")
-const pass = prompt("Ingresa Password")
-
-signIn(user,pass);
-
-function signIn(user, pass){
-    if(login(user,pass)){
-       alert("Bienvenido");
-        verTimeLine()
-    }else{
-        alert("Usuario incorrecto");
-    }
-}
-
-function login(user, pass) {
-    for (let i = 0; i < usersDB.length; i++) {
-        if (usersDB[i].user === user && usersDB[i].pass === pass) {    
-            return true;
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let operationSuccessful = true
+        if (!operationSuccessful) {
+            resolve('Operación exitosa')
+        } else {
+            reject('Operación fallida')
         }
-    }
-    return false; // Si termina de revisar todos los usuarios y no encuentra coincidencia, retorna false.
-}
+    },2000)
 
-function verTimeLine() {
-    for (let i = 0; i < usersTimeline.length; i++) {
-        console.log(usersTimeline[i])
-    }
-}
+})
 
-
-
-
-
+promise
+    .then((successMesage)=>{
+        console.log(successMesage)
+    })
+    .catch((errorMesage)=>{
+        console.log(errorMesage)
+    })
