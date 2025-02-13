@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //verbos http
 //GET, POST, PATCH, PUT, DELETE
 
@@ -78,3 +79,7 @@ postList.addEventListener("click", event=>{
         sendHTTPRequest("DELETE", `https://jsonplaceholder.typicode.com/posts/${postId}`)
     }
 })
+=======
+// verbos http
+// GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS, CONNECT, TRACE
+>>>>>>> e7a3e904141da903ebafb7ac670ec0387b140064
