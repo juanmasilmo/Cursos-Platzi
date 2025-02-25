@@ -1,13 +1,14 @@
 const express = require("express");
 const { faker } = require('@faker-js/faker');
-const app = express();
+
+const router = express.Router();
 
 
-app.get('/products/filter', (req,res)=>{//esto es especifico, para que se puedan hacer consultas dinamicas, deben estar antes de las consultas dinamicas, no despues
+router.get('/filter', (req,res)=>{//esto es especifico, para que se puedan hacer consultas dinamicas, deben estar antes de las consultas dinamicas, no despues
   res.send("Soy un filter");
 })
 
-app.get('/products/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   const { id } = req.params;
 
   res.json([
@@ -19,21 +20,23 @@ app.get('/products/:id', (req, res) => {
   ])
 })
 
-/*app.get('/products/filter', (req,res)=>{//esto es especifico, para que se puedan hacer consultas dinamicas, deben estar antes de las consultas dinamicas, no despues
+/*router.get('/products/filter', (req,res)=>{//esto es especifico, para que se puedan hacer consultas dinamicas, deben estar antes de las consultas dinamicas, no despues
   res.send("Soyun filter");
 })*/
 
 
-app.get('/products', (req, res) => {
+router.get('/', (req, res) => {
   const products = [];
   const { size } = req.query;
   const limit = size || 10;
   for (let i = 0; i < limit; ++i) {
     products.push({
       name: faker.commerce.productName(),
-      price: parseInt(faker.commerce.price())
+      price: parseInt(faker.commerce.price(), 10)
     })
 
   }
   res.json([products])
 });
+
+module.exports = router;

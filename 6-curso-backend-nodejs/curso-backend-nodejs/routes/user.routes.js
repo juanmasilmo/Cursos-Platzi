@@ -1,9 +1,10 @@
 const express = require("express");
 const { faker } = require('@faker-js/faker');
-const app = express();
+
+const router = express.Router();
 
 
-app.get('/users', (req, res) => {
+router.get('/:id', (req, res) => {
   const { id } = req.params;
 
   res.json([
@@ -15,7 +16,7 @@ app.get('/users', (req, res) => {
   ])
 })
 
-app.get('/user'), (req, res) => {
+router.get('/'), (req, res) => {
 const users = [];
 const {size} = req.query;
 const limit = size || 10;
@@ -28,3 +29,5 @@ for (let i = 0; i < limit; i++) {
 }
 res.json([users])
 }
+
+module.exports = router;

@@ -1,7 +1,10 @@
 const express = require("express");
+const routerApi = require("./routes");
+
+
 const app = express();
 const port = 3000;
-const { faker } = require('@faker-js/faker');
+
 
 
 app.get("/", (req, res) => {
@@ -14,11 +17,11 @@ app.get('/nueva-ruta', (req, res) => {
 })
 
 
+routerApi(app);
 
 
 
-
-app.get('/clients', (req, res) => {
+/*app.get('/clients', (req, res) => {
   res.json([
     {
       name: "client 1",
@@ -39,7 +42,7 @@ app.get('/categories', (req, res) => {
   } else {
     res.send("no hay parametros")
   }
-})
+})*/
 
 app.listen(port, () => {
   console.log(`servidor escuchando en el puerto ${port}`);
