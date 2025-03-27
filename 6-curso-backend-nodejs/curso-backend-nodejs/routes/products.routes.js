@@ -36,7 +36,15 @@ router.get('/', (req, res) => {
     })
 
   }
-  res.json([products])
-});
+  res.json(products)
+})
+
+router.post('/', (req, res)=>{
+  const body = req.body;
+  res.json({
+    message: "created bro",
+    data: body
+  });
+})
 
 module.exports = router;

@@ -1,5 +1,5 @@
 const express = require("express")
-const faker = require("@faker-js/faker")
+const { faker } = require("@faker-js/faker")
 
 const router = express.Router();
 
@@ -21,17 +21,27 @@ const router = express.Router();
 });*/
 
 router.get('/', (req, res) => {
+
   const clients = [];
   const { size } = req.query;
-  const limit = size || 5;
-  for (let i = 0; i <= limit ; i++) {
-    clients.push({
-      name: faker.person.fullName(),
-      age: faker.number.int({ min: 18, max: 80 }),
-    })
+  const limit = parseInt(size) || 5;
+
+  for (let i = 0; i < limit; i++) {
+    if (i % 2 == 0) {
+      clients.push({
+        name: faker.person.fullName({ sex: "male" }),
+        price: faker.person.zodiacSign(),
+      });
+    } else {
+      clients.push({
+        name: faker.person.fullName({ sex: "female" }),
+        price: faker.person.zodiacSign(),
+      });
+    }
 
   }
-  res.json([clients])
+
+  res.json(clients);
 });
 
 module.exports = router;
