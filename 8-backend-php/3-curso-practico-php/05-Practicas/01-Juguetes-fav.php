@@ -12,10 +12,10 @@ $edad = 0; // Inicializar la edad
 $continuar = true; // Variable de control para el bucle
 
 while ($continuar) {
+    $edad = readline("Ingrese la edad del estudiante: ");
+    $edad = (int) $edad; // Convertir a entero
+    echo PHP_EOL; // Salto de línea en PHP
     if ($edad >= 0) {
-        $edad = readline("Ingrese la edad del estudiante: ");
-        $edad = (int) $edad; // Convertir a entero
-        echo PHP_EOL; // Salto de línea en PHP
 
         switch (true) {
 
@@ -54,8 +54,6 @@ while ($continuar) {
             echo PHP_EOL; // Salto de línea en PHP
         }
     }
-    $edad = readline("Ingrese la edad del estudiante: ");
-    $edad = (int) $edad; // Convertir a entero
     echo PHP_EOL; // Salto de línea en PHP
 }
 echo "Edad es {$edad}" . PHP_EOL;
