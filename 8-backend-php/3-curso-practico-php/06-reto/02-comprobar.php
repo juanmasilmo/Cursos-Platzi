@@ -1,7 +1,7 @@
 <?php
 
-print_r($_REQUEST); // Muestra el contenido del array $_POST
-echo "<br>";
+//print_r($_REQUEST); // Muestra el contenido del array $_POST
+//echo "<br>";
 $palabras = array("sol", "luna", "cielo");
 echo "<br>";
 
