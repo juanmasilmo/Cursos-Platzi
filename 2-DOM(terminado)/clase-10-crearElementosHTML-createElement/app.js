@@ -32,7 +32,7 @@ console.log(listArea);
 
 //createElement es por partes, es mas prolijo pero mas largo
 
-btnCrear.addEventListener("click", () => { //creo la funcion cuandop hace click
+btnCrear.addEventListener("click", () => { //creo la funcion cuando hace click
   const newLi = document.createElement("li");//creo la constante le asigno lo que necesito hacer, en este caso createElement
   newLi.textContent = "item 7"; //asigno el texto
   newLi.id = "items";//asigno un id, para que se apliquen los estilos css segun el id, en este caso el id es item
