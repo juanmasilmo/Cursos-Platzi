@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>metodos</title>
+  </head>
+  <body>
+    <script>
+      const formData = new FormData();
+
+      formData.append("nombre", "Juan");
+      formData.append("apellido", "Pérez");
+      formData.append("edad", "30");
+
+      fetch("server.php?user=JPerez", {
+        //url del servidor donde se enviara la peticion, puede ser una API, la URL de una pagina, etc.
+        method: "POST",
+        body: formData,
+      })
+        .then((res) =>{
+          console.log(res.status); // 200
+          console.log(res.headers)
+          console.log(typeof res); // object
+          return res.text(); //para que se pueda devolver la respuesta del servidor hay que poner el return, ta que el segundo .then esta esperando la respuesta del servidor, si se pasa directamente .then(res => res.text()) se envia la respuesta  del servidor al segundo .then, pero no se puede acceder al contenido de res
+        })
+        .then((data) => {
+          console.log("Respuesta del servidor:", data);
+        });
+    </script>
+  </body>
+</html>
