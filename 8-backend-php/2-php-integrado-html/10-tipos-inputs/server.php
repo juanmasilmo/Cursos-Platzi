@@ -23,12 +23,20 @@ if (isset($_POST["name3"])) {
     echo "El checkbox name3 no está seleccionado" . PHP_EOL;
 } */
 
-var_dump($_POST["pais"]) . PHP_EOL;
+/* var_dump($_POST["pais"]) . PHP_EOL;
 if (isset($_POST["pais"])) {
     echo "El radio button " . $_POST["pais"] . " está seleccionado" . PHP_EOL;
 } else {
     echo "Ningún radio button está seleccionado" . PHP_EOL;
-}
+} */
+
+/* var_dump($_POST["paises"]) . PHP_EOL;
+if (isset($_POST["paises"])) {
+    echo "El select " . $_POST["paises"] . " está seleccionado" . PHP_EOL;
+} else {
+    echo "Ningún select está seleccionado" . PHP_EOL;
+} */
+var_dump($_FILES["galeria"]) . PHP_EOL;
 
 echo "<pre>";
 ?>
