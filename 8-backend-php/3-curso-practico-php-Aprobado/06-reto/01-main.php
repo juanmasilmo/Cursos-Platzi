@@ -1,24 +1,16 @@
 <?php
 $palabras = array("sol", "luna", "cielo");
-$palabras_desordenadas = array();
 
-for ($i=0; $i < count($palabras); $i++) {
-    $palabra_desordenada[$i] = str_shuffle($palabras[$i]);
+$form = "<form action='02-comprobar.php'>";
+
+for ($i = 0; $i < count($palabras); $i++) {
+    $form .= "la palabra " . str_shuffle($palabras[$i]) . " " . // .= concatena lo que tiene el form con lo que le pasamos
+    "<input type='text' name='palabra$i' placeholder='Introduce una palabra' />";
+    $form .= "<br>"; // Ahora se concatena correctamente el salto de línea
 }
 
+$button = "<button type='submit'>Enviar</button>";
+$form_cierre = "</form>";
 
-print_r($palabras_desordenadas);
-echo "
-    <form action='02-comprobar.php'>
-        <input type='text' name='palabra0' placeholder='Introduce una palabra' />
-        <input type='text' name='palabra1' placeholder='Introduce una palabra' />
-        <input type='text' name='palabra2' placeholder='Introduce una palabra' />
-        <button type='submit'>Enviar</button>
-    </form>";
-
-echo "<ul>";
-foreach ($palabras_desordenadas as $palabra) {
-    echo "<li>$palabra</li>";
-}
-echo "</ul>";
-    ?>
+echo $form . $button . $form_cierre;
+?>
