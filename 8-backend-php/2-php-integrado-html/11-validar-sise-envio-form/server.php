@@ -30,12 +30,23 @@
 // empty() verifica si la variable está vacía (0, "", null, false, array())
 // isset() y empty() son funciones de PHP que se utilizan para verificar si una variable está definida y no es null, o si una variable está vacía, respectivamente.
 
-if (isset($_POST) && (empty($_POST))) {
+/* if (isset($_POST) && !empty($_POST)) {
 
-    echo "El formulario no se ha enviado correctamente.";
+    echo "El formulario se ha enviado correctamente" . "<br>";
     var_dump($_POST['nombre']); // Muestra los datos enviados por el formulario
     var_dump($_POST['email']);
 } else {
     echo "No se ha enviado el formulario.";
+} */
+if(isset($_POST["form"])){
+    echo "El formulario se ha enviado correctamente" . "<br>";
 }
+var_dump($_POST["form"]); // Muestra los datos enviados por el formulario
+
+/* if (isset($_POST["form"]) && !empty($_POST["form"])) {
+    // Obtener los datos del formulario
+    echo "El formulario completo se ha enviado correctamente" . "<br>";
+}else{
+    echo "No se ha enviado el formulario, faltaron datos.";
+} */
 ?>

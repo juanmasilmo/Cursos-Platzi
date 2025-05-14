@@ -1,5 +1,7 @@
 <?php
 $condicion = false;
+
+//Si estás ejecutando el código en la línea de comandos (CLI), PHP_EOL funcionará correctamente porque está diseñado para entornos de terminal.
 ?>
 
 <!DOCTYPE html>
@@ -29,11 +31,11 @@ $condicion = false;
     <?php } else { ?>
         <p>Si es falso, ves esto y es aceptable</p>
     <?php } ?>
-    
-    <?php //esto si esta bien?>
-    <?php if ($condicion) : ?>
+
+    <?php //esto si esta bien ?>
+    <?php if ($condicion): ?>
         <p>Si es verdadero, ves esto y es correcto</p> <!-- se puede imprimir la etiqueta de manera directa -->
-    <?php else : ?>
+    <?php else: ?>
         <p>Si es falso, ves esto y es correcto</p>
     <?php endif; ?>
 

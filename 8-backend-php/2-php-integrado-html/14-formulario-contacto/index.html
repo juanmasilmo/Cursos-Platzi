@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Formulario de Contacto</title>
+  </head>
+  <body>
+    <form method="post" action="#">
+      <h1 style="text-align: center">¡Contactanos!</h1>
+
+      <div>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required />
+        <br />
+      </div>
+
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <br />
+      </div>
+
+      <div>
+        <label for="subject">Asunto:</label>
+        <input type="subject" id="subject" name="subject" required />
+        <br />
+      </div>
+
+      <div>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+        <br />
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <script
+      src="https://kit.fontawesome.com/8fb3e9733f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
