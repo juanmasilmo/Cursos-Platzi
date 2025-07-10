@@ -1,0 +1,12 @@
+{
+  "name": "juanmasilmo/composer-project",
+  "version": "1.0.0",
+  "autoload": {
+    "psr-4": {
+      "juanmasilmo\\": "src/"
+    },
+    "files": [
+      "src/Helpers.php"
+    ]
+  }
+}
